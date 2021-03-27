@@ -103,7 +103,7 @@ else if (confirmUppercase) {
 // for random variable:
 // random selection for all variables
 for (var i=0; i< enter;i++) {
-  var pickChoices = choices[Math.floor(Math.random(*choices.length)];
+  var pickChoices = choices[Math.floor(Math.random() * choices.length)];
   password.push(pickChoices);
 }
 //converts password array to string
