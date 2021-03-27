@@ -50,8 +50,51 @@ function generatePassword() {
     confirmUppercase= confirm("Do you want this password to contain Uppercase Letters?");
     confirmLowercase= confirm("Do you want this password to contain Lowercase Letters?");
   };
-//else if statement that uses user input prompts to determine choices 
 
+// else if for negative responses
+if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
+  choices = alert("You must choose a criteria!");
+}
+//else if statement that uses user input prompts after choices 
+// else if for positive responses
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  choices = character.concat(number, alpha, alpha2);
+}
+
+// else if for 3 positive responses
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  choices = character.concat(number, alpha2);}
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  choices = character.concat(number, alpha);}
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  choices = character.concat(alpha, alpha2);}
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  choices = character.concat(alpha, alpha2);}
+
+  // else if for 2 positive responses
+else if (confirmCharacter && confirmNumber) {
+  choices = character.concat(number);}
+else if (confirmCharacter && confirmLowercase) {
+  choices = character.concat(alpha);}
+else if (confirmCharacter && confirmUppercase) {
+  choices = character.concat(alpha2);}
+else if (confirmLowercase && confirmNumber) {
+  choices = alpha.concat(number);}
+else if (confirmLowercase && confirmUppercase) {
+  choices = alpha.concat(alpha2);}
+else if (confirmNumber && confirmUppercase) {
+  choices = number.concat(alpha2);  }
+
+// else if for 1 positive response
+else if (confirmCharacter) {
+  choices = character;}
+else if (confirmCharacter) {
+  choices = character;}
+else if (confirmCharacter) {
+  choices = character;}
+else if (confirmLowercase) {
+  choices = alpha;}
+// space var to fill uppercase conversion
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
