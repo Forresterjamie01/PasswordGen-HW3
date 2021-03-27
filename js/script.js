@@ -32,7 +32,27 @@ get.addEventListener("click",function(){
 
 
 // Write password to the #password input
-function writePassword() {
+function generatePassword() {
+  //Ask user for input
+  enter = parseInt(prompt("Please choose between 8 and 128 characters for your password."));
+  // If statement for user input
+  if (!enter) {
+    alert("This needs a value!");
+  } else if (enter <8|| enter >128){
+    //Confirm user input
+
+    // Beginning user input prompts
+    enter = parseInt(promt("Your password must be between 8 and 128 characters."))
+  } else {
+    // Confirms when user input is validated.
+    confirmNumber= confirm("Do you want this password to contain special characters?");
+    confirmCharacter= confirm("Do you want this password to contain special characters?");
+    confirmUppercase= confirm("Do you want this password to contain Uppercase Letters?");
+    confirmLowercase= confirm("Do you want this password to contain Lowercase Letters?");
+  };
+//else if statement that uses user input prompts to determine choices 
+
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
