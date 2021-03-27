@@ -88,20 +88,41 @@ else if (confirmNumber && confirmUppercase) {
 // else if for 1 positive response
 else if (confirmCharacter) {
   choices = character;}
-else if (confirmCharacter) {
-  choices = character;}
-else if (confirmCharacter) {
-  choices = character;}
+else if (confirmNumber) {
+  choices = number;}
 else if (confirmLowercase) {
   choices = alpha;}
+
 // space var to fill uppercase conversion
+else if (confirmUppercase) {
+  choices = space.concat(alpha2);
+}
+//password variable
+  var password = [];
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+// for random variable:
+// random selection for all variables
+for (var i=0; i< enter;i++) {
+  var pickChoices = choices[Math.floor(Math.random(*choices.length)];
+  password.push(pickChoices);
+}
+//converts password array to string
+var ps = password.join("");
+UserInput (ps);
+return ps;
+}
+//puts password into tect box
+function UserInput(ps) {
+  document.getElementById("password").textcontent = ps;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+var copy = document.querySelector("#copy");
+copy.addEventListener("click", function () {copyPassword();
+});
+
+//copy password value
+function copyPassword() {
+  document.getElementById("password").select();
+  document.execCommand("Copy");
+  alert("Password copied to clipboard.");
+}
